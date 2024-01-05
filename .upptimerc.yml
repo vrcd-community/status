@@ -1,31 +1,135 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+owner: vrcd-community
+repo: status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
+  - name: VRCD 官网
+    url: https://vrcd.org.cn
+    method: GET
+    icon: https://cdn.jsdelivr.net/gh/vrcd-community/status/assets/vrcd-main-black-background.svg
+  - name: Developer Localization Project VRChat 汉化文档中心
+    url: https://docs.vrczh.org
+    method: GET
+    icon: https://cdn.jsdelivr.net/gh/vrcd-community/status/assets/vrcd-localize-black-background.svg
+  - name: VPM Frontend 镜像站前端
+    url: https://vcc.vrczh.org
+    method: GET
+    icon: https://cdn.jsdelivr.net/gh/vrcd-community/status/assets/vpm-icon.svg
+  - name: VPM API 镜像站后端
+    url: https://vpm.vrczh.org/vpm
+    method: GET
+    icon: https://cdn.jsdelivr.net/gh/vrcd-community/status/assets/vpm-icon.svg
+  - name: OSS 对象存储 (由雨云提供)
+    url: https://cn-sy1.rains3.com/vpm/ping
+    method: GET
+    icon: https://www.rainyun.com/img/icons/android-chrome-192x192.png
+    expectedStatusCodes:
+      - 403
+      - 200
+  - name: WAF 1
+    check: "tcp-ping"
+    url: $WAF1_URL
+    port: 443
+    icon: https://cdn.jsdelivr.net/gh/vrcd-community/status/assets/vrcd-main-black-background.svg
+  - name: WAF 2
+    check: "tcp-ping"
+    url: $WAF2_URL
+    port: 443
+    icon: https://cdn.jsdelivr.net/gh/vrcd-community/status/assets/vrcd-main-black-background.svg
+
+assigning:
+  - Misaka-L
+  - flower-elf
+  - RyuraeleN
+  - SKPloft
+  - slime-butter
+
+i18n:
+  activeIncidents: 当前发生的服务中断
+  allSystemsOperational: 所有系统正常工作
+  incidentReport: "故障 #$NUMBER 的报告 →"
+  activeIncidentSummary: 发生于 $DATE 附带有 $POSTS 通告
+  incidentTitle: 故障 $NUMBER 详细信息
+  incidentDetails: 故障详细
+  incidentFixed: 已修复
+  incidentOngoing: 故障
+  incidentOpenedAt: 发生于
+  incidentClosedAt: 结束于
+  incidentViewOnGitHub: 在 Github 上查看详细信息并追踪状态更新
+  incidentCommentSummary: 由 $AUTHOR 于 $DATE 发布
+  incidentBack: ← 返回查看所有故障
+  pastIncidents: 先前的故障
+  pastIncidentsResolved: 在 $MINUTES 分钟内解决，附带有 $POSTS 个通告
+  liveStatus: 实时状态
+  overallUptime: "整体正常运行时间: $UPTIME"
+  overallUptimeTitle: 正常运行时间
+  averageResponseTime: "平均响应延迟：$TIMEms"
+  averageResponseTimeTitle: 平均响应延迟
+  sevelDayResponseTime: 7 天内响应延迟数据
+  responseTimeMs: 响应延迟 (ms)
+  up: 正常运行
+  down: 故障
+  degraded: 服务降级
+  ms: ms
+  loading: 加载中
+  footer: 该页面是[开源]($REPO)的，由 [Upptime](https://upptime.js.org) 强力驱动
+  rateLimitExceededTitle: 已经达到速率限制
+  rateLimitExceededIntro: 您已经超过了一小时内的请求次数，因此您必须等待一段时间才能再次访问本网站。或者，您可以添加一个 GitHub 个人访问令牌来继续使用本网站。
+  rateLimitExceededWhatDoesErrorMean: 这个错误是什么意思？
+  rateLimitExceededErrorMeaning: 本网站使用 GitHub API 访问有关我们服务状态的实时数据。默认情况下，GitHub 允许每个 IP 地址每小时发出 60 次请求，您已经用完了限额。
+  rateLimitExceededErrorHowCanFix: 如何修复？
+  rateLimitExceededErrorFix: 您可以再等一个小时，您的 IP 地址的限制就会恢复。或者，你也可以添加 GitHub 个人访问令牌，这样每小时就能多发送 5000 个请求。
+  rateLimitExceededGeneratePAT: 了解如何生成个人访问令牌
+  rateLimitExceededHasSet: 您已设置了个人访问令牌。
+  rateLimitExceededRemoveToken: 移除令牌
+  rateLimitExceededGitHubPAT: GitHub 个人访问令牌
+  rateLimitExceededCopyPastePAT: 复制并粘贴你的令牌
+  rateLimitExceededSaveToken: 保存令牌
+  errorTitle: 发生了一个错误。
+  errorIntro: 在尝试获取最新的服务状态详细信息时发生了一个错误。
+  errorText: 你可以稍等一会重试。
+  errorHome: 返回主页
+  pastScheduledMaintenance: 先前的计划维护
+  scheduledMaintenance: 计划维护
+  scheduledMaintenanceSummaryStarted: 从 $DATE 起，已经维护了 $DURATION 分钟
+  scheduledMaintenanceSummaryStarts: 于 $DATE 开始维护 $DURATION 分钟
+  startedAt: 已经开始于
+  startsAt: 开始于
+  duration: 时长
+  durationMin: $DURATION 分钟
+  incidentCompleted: 完成
+  incidentScheduled: 计划
+
+commitMessages:
+  commitAuthorName: "VRCD Status Bot"
+  commitAuthorEmail: "us@vrcd.org.cn"
+  readmeContent: ":pencil: 更新 README 中的概况 [skip ci] [upptime]"
+  summaryJson: ":card_file_box: 更新服务状态概况 [skip ci] [upptime]"
+  statusChange: "$EMOJI $SITE_NAME 的状态为 $STATUS (花费 $RESPONSE_TIME ms 响应 $RESPONSE_CODE) [skip ci] [upptime]"
+  graphsUpdate: ":bento: 更新图表 [skip ci] [upptime]"
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.vrcd.org.cn
+  theme: dark
+  logoUrl: https://cdn.jsdelivr.net/gh/vrcd-community/upptime/assets/vrcd-main-white.svg
+  faviconSvg: https://cdn.jsdelivr.net/gh/vrcd-community/upptime/assets/vrcd-main-white.svg
+  name: 服务状态
+  introTitle: "这里是 VRCD 服务状态监控页面"
+  introMessage: 您可以在此查看我们旗下所有服务的运行状况。该状态页由 [Upptime](https://github.com/koj-co/upptime) 驱动。
+  metaTags:
+    - name: "color-scheme"
+      content: "dark"
+    - name: "robots"
+      content: "noindex"
   navbar:
-    - title: Status
+    - title: 服务状态
       href: /
-    - title: GitHub
+    - title: Upptime GitHub 仓库
       href: https://github.com/$OWNER/$REPO
-
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+    - title: GitHub
+      href: https://github.com/$OWNER/
+    - title: 官方网站
+      href: https://vrcd.org.cn
+    - title: VPM 镜像站
+      href: https://vcc.vrczh.org
+    - title: VRChat 汉化文档中心
+      href: https://docs.vrczh.org
