@@ -100,8 +100,8 @@ i18n:
   incidentScheduled: 计划
 
 commitMessages:
-  commitAuthorName: "VRCD Status Bot"
-  commitAuthorEmail: "us@vrcd.org.cn"
+  commitAuthorName: "vrcd-status-bot"
+  commitAuthorEmail: "noreply@vrcd.org.cn"
   readmeContent: ":pencil: 更新 README 中的概况 [skip ci] [upptime]"
   summaryJson: ":card_file_box: 更新服务状态概况 [skip ci] [upptime]"
   statusChange: "$EMOJI $SITE_NAME 的状态为 $STATUS (花费 $RESPONSE_TIME ms 响应 $RESPONSE_CODE) [skip ci] [upptime]"
