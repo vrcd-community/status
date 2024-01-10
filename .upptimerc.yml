@@ -103,6 +103,10 @@ commitMessages:
   commitAuthorName: "vrcd-status-bot"
   commitAuthorEmail: "noreply@vrcd.org.cn"
 
+workflowSchedule:
+  responseTime: "*/5 * * * *"
+  graphs: "*/15 * * * *"
+
 status-website:
   cname: status.vrcd.org.cn
   theme: dark
