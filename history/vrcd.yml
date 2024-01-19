@@ -1,7 +1,7 @@
 url: https://vrcd.org.cn
-status: up
-code: 200
-responseTime: 3274
-lastUpdated: 2024-01-19T17:18:21.235Z
+status: down
+code: 502
+responseTime: 2716
+lastUpdated: 2024-01-19T17:31:40.433Z
 startTime: 2024-01-05T15:59:20.883Z
 generator: Upptime <https://github.com/upptime/upptime>
