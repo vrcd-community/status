@@ -1,0 +1,29 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Renew Github App Token
+
+# Controls when the workflow will run
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+jobs:
+  renew-token:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create GitHub App Token
+        id: generate_token
+        uses: actions/create-github-app-token@v1.6.0
+        with:
+          app-id: ${{ secrets.GithubAppId }}
+          private-key: ${{ secrets.GithubAppPrivateKey }}
+          skip-token-revoke: false
+
+      - name: Update Secret
+        run: gh secret set ${{ secrets.GH_PAT }} -a actions
+        env:
+          GH_TOKEN: ${{ steps.generate_token.outputs.token }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
