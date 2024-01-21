@@ -3,7 +3,7 @@ repo: status
 
 sites:
   - name: VRCD 官网
-    url: https://vrcd.org.cn
+    url: https://www.vrcd.org.cn
     method: GET
     icon: https://cdn.jsdelivr.net/gh/vrcd-community/status/assets/vrcd-main-black-background.svg
   - name: Developer Localization Project VRChat 汉化文档中心
