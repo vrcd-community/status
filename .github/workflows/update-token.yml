@@ -22,7 +22,7 @@ jobs:
           skip-token-revoke: false
 
       - name: Update Secret
-        run: gh secret set ${{ secrets.GH_PAT }} -a actions
+        run: gh secret set .GH_PAT -a actions
         env:
           GH_TOKEN: ${{ steps.generate_token.outputs.token }}
           OWNER: ${{ github.repository_owner }}
