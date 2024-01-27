@@ -90,8 +90,8 @@ i18n:
   errorHome: 返回主页
   pastScheduledMaintenance: 先前的计划维护
   scheduledMaintenance: 计划维护
-  scheduledMaintenanceSummaryStarted: 从 $DATE 起，已经维护了 $DURATION 分钟
-  scheduledMaintenanceSummaryStarts: 于 $DATE 开始维护 $DURATION 分钟
+  scheduledMaintenanceSummaryStarted: 开始于 $DATE ，预计维护 $DURATION 分钟
+  scheduledMaintenanceSummaryStarts: 将于 $DATE 开始维护 $DURATION 分钟
   startedAt: 已经开始于
   startsAt: 开始于
   duration: 时长
