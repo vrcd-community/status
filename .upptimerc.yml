@@ -104,7 +104,7 @@ commitMessages:
   commitAuthorEmail: "noreply@vrcd.org.cn"
 
 workflowSchedule:
-  responseTime: "*/5 * * * *"
+  responseTime: "*/10 * * * *"
   graphs: "*/15 * * * *"
 
 status-website:
